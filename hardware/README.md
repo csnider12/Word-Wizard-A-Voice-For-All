@@ -2,8 +2,6 @@
 
 Custom carrier/IO board for the Raspberry Pi Compute Module 4, designed in **KiCad 9.0.4**.
 
-Add your `.kicad_pro` / `.kicad_sch` / `.kicad_pcb` source files to this folder. The schematic is organized into five sheets:
-
 | Sheet | Contents |
 |---|---|
 | `CM4 IO Board` (top) | CM4 module footprint, mounting holes, sheet references |
