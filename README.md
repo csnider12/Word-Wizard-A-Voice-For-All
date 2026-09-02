@@ -29,20 +29,20 @@
 
 ## Overview
 
-Word Wizard is a semester-long engineering capstone project built to give non-verbal students, educators, and caregivers a simple, durable, and affordable alternative to expensive tablet-based AAC systems. A user taps a color-coded NFC communication card on the device, and Word Wizard speaks the corresponding word or phrase aloud through an onboard text-to-speech (TTS) engine.
+Word Wizard is a semester-long engineering project built to give non-verbal students, educators, and caregivers a simple, durable, and affordable alternative to expensive tablet-based AAC systems. A user taps a color-coded NFC communication card on the device, and Word Wizard speaks the corresponding word or phrase aloud through an onboard text-to-speech (TTS) engine.
 
 The device is built around a **Raspberry Pi Compute Module 4** on a custom-designed PCB, an **NFC reader** for card input, a **Piper TTS engine** for multilingual speech output, and a fully 3D-printed enclosure with an integrated card storage drawer.
 
 ## Features
 
-- 🔖 **NFC-based input** — tap a card, hear a word. No menus, no screens, no complex UI.
-- 🎨 **Fitzgerald Key color coding** — cards are grouped by grammatical category (questions, actions, social words, people) using a widely recognized AAC standard.
-- 🗣️ **Multilingual TTS** — powered by the [Piper](https://github.com/rhasspy/piper) TTS engine, supporting multiple languages and dialects.
-- 🔋 **USB-C rechargeable** — ≥30 Wh battery, no proprietary cables or disposable batteries.
-- 🧰 **Fully customizable vocabulary** — any NFC-writable smartphone can reprogram a card in seconds.
-- 🛡️ **Durable, drop-tested enclosure** — TPU bumper rated for drops from ~3 ft onto hard flooring.
-- 🗄️ **Integrated card storage** — drawer system holds 40+ color-coded cards.
-- 💰 **Low-cost alternative** — significantly cheaper than tablet-based AAC solutions, and scalable for classroom/bulk deployment.
+-  **NFC-based input** — tap a card, hear a word. No menus, no screens, no complex UI.
+-  **Fitzgerald Key color coding** — cards are grouped by grammatical category (questions, actions, social words, people) using a widely recognized AAC standard.
+-  **Multilingual TTS** — powered by the [Piper](https://github.com/rhasspy/piper) TTS engine, supporting multiple languages and dialects.
+-  **USB-C rechargeable** — ≥30 Wh battery, no proprietary cables or disposable batteries.
+-  **Fully customizable vocabulary** — any NFC-writable smartphone can reprogram a card in seconds.
+-  **Durable, drop-tested enclosure** — TPU bumper rated for drops from ~3 ft onto hard flooring.
+-  **Integrated card storage** — drawer system holds 40+ color-coded cards.
+-  **Low-cost alternative** — significantly cheaper than tablet-based AAC solutions, and scalable for classroom/bulk deployment.
 
 ## How It Works
 
@@ -87,7 +87,7 @@ Wiring (I2C, default):
   PN532 GND -> GND
 ```
 
-## Engineering Deep Dive: The PCB Fault
+## Problems: The PCB Fault
 
 One of the most time-consuming parts of the project was tracking down an intermittent fault on the custom PCB. Code and hardware that worked fine on a jumper-wired development board began failing after being transferred to the custom board — the device would boot normally, then enter a boot loop roughly 20–30 seconds after a card was read.
 
@@ -109,7 +109,7 @@ One of the most time-consuming parts of the project was tracking down an intermi
 
 6. Verified the fix back on the oscilloscope: clean rising/falling edges on both I2C lines, comfortably past the logic thresholds.
 
-This was the single biggest lesson of the build: **one unconnected reference pin caused hours of debugging** — a reminder of how much value there is in double-checking datasheets and having a second set of eyes on a schematic before fabrication.
+This was the single biggest lesson of the build: one unconnected reference pin caused hours of debugging, a reminder of how much value there is in double-checking datasheets and having a second set of eyes on a schematic before fabrication.
 
 ## Testing: Speaker Grille Optimization
 
