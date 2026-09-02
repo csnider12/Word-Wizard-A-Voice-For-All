@@ -1,6 +1,6 @@
 # Design — CAD & Mechanical
 
-SolidWorks source files (`.SLDPRT` / `.SLDASM`) and drawing sheets (`.SLDDRW`) go here. Add your part files alongside this README.
+Above
 
 ## Assembly Overview
 
